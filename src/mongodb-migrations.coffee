@@ -163,8 +163,6 @@ class Migrator
     return
 
   rollback: (done, progress) ->
-    if @_lastDirection != 'up'
-      return done new Error('Rollback can only be ran after migrate')
     @_runWhenReady 'down', done, progress
     return
 
